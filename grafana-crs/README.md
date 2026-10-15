@@ -14,6 +14,7 @@ A Helm chart for Kubernetes
 | datasources | list | `[]` |  |
 | folders | list | `[]` |  |
 | fullnameOverride | string | `""` |  |
+| grafana.disableLoginForm | bool | `false` |  |
 | grafana.domain | string | `""` |  |
 | grafana.envs | list | `[]` |  |
 | grafana.grafanaVersion | string | `"12.1.0"` |  |
