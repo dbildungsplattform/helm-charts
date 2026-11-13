@@ -12,11 +12,11 @@ concurrency:
 
 jobs:
   preperation:
-    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/helm-preperation.yaml@7
+    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/get-context.yaml@4b5c0434f28b537e9199ffebc21f4e6e39cbcdde # 8.4.3
   scan:
     # https://github.com/actions/runner/issues/1917#issuecomment-2505051075
     needs: [preperation]
-    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/check-helm-kics.yaml@7
+    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/check-helm-kics.yaml@4b5c0434f28b537e9199ffebc21f4e6e39cbcdde # 8.4.3
     permissions:
       contents: read
     with: 
@@ -24,7 +24,7 @@ jobs:
   release_helm:
     # https://github.com/actions/runner/issues/1917#issuecomment-2505051075
     needs: [preperation]
-    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/chart-release.yaml@7
+    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/chart-release.yaml@4b5c0434f28b537e9199ffebc21f4e6e39cbcdde # 8.4.3
     secrets: inherit
     with:
       chart_path: "."

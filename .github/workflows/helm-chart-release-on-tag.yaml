@@ -15,20 +15,20 @@ jobs:
       version: ${{ steps.nameTag.outputs.version }}
     steps:
       - name: Filter Tag name
-        uses: olegtarasov/get-tag@v2.1
+        uses: olegtarasov/get-tag@53af8e1e538a0ffab949cdde3e332d8e58e8630f # v2.1
         id: nameTag
         with:
           tagRegex: "(?<chart>.+?)-(?<version>[0-9]+.[0-9]+.[0-9]+)"
       
   scan:
-    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/check-helm-kics.yaml@7
+    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/check-helm-kics.yaml@4b5c0434f28b537e9199ffebc21f4e6e39cbcdde # 8.4.3
     permissions:
       contents: read
     with: 
       chart_path: "."
   release_helm:
     needs: get_tag
-    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/chart-release.yaml@7
+    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/chart-release.yaml@4b5c0434f28b537e9199ffebc21f4e6e39cbcdde # 8.4.3
     secrets: inherit
     with:
       chart_path: "."
