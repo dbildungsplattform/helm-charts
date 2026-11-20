@@ -10,11 +10,11 @@ on:
 
 jobs:
   preperation:
-    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/helm-preperation.yaml@7
+    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/get-context.yaml@8
   helm-docs:
     # https://github.com/actions/runner/issues/1917#issuecomment-2505051075
     needs: [preperation]
-    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/generate-helm-docs.yaml@7
+    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/generate-helm-docs.yaml@8
     with:
       name: "${{ github.actor }}"
       email: "${{ github.actor }}@users.noreply.github.com"

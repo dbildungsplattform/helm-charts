@@ -8,7 +8,7 @@ on:
         - '!.github/**'
 jobs:
   scan_pr:
-    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/check-helm-kics.yaml@7
+    uses: dBildungsplattform/dbp-github-workflows/.github/workflows/check-helm-kics.yaml@8
     permissions:
       contents: read
     with: 
